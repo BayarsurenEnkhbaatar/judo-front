@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Routes} from 'react-router-dom'
+import Navbar from './components/Navbar';
+import Home from './pages/Home'
+import Footer from './components/Footer'
+import Register from './pages/Register';
+import Profile from './pages/Profile';
+import DashboardProfile from './pages/Profile/Pages/dashboard'
+import Teams from './pages/Profile/Pages/teams'
+import Comptation from './pages/Comptation';
+import RigthNowComp from './pages/Comptation/right-now';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/comptation' element={<Comptation/>}/>
+        <Route path='/comptation-right/:slug' element={<RigthNowComp/>}/>
+
+        <Route path="/profile" element={<Profile />}>
+          <Route index element={<DashboardProfile/>}/>
+          <Route path="teams" element={<Teams/>}/>
+        </Route>
+        
+      </Routes>
+      <Footer/>
+    </>
   );
 }
 
