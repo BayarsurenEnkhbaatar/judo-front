@@ -6,7 +6,7 @@ import Sidebar from './Components/sidebar'
 const Profile = () => {
   const {currentUser} = useContext(AuthContext);
 
-  if(!currentUser){
+  if(currentUser){
     return (
       <div className='bg-[#f3f4f5] font-Roboto'>
           <div className='xs:mx-4 md:mx-8 py-8'>

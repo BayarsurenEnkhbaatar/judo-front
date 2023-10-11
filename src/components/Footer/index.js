@@ -5,7 +5,7 @@ const Footer = () => {
   const location = useLocation();
   const pathname = location.pathname;
   return (
-    <div className={pathname === '/register'?'hidden':'mt-20'}>
+    <div className={pathname === '/register'?'hidden':''}>
       <div className='bg-[#0337A6]'>
         <div className='container'>
           <div className='text-white py-10 text-center font-Roboto'>

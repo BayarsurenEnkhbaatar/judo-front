@@ -19,7 +19,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
           'back': "url('../public/images/erkhmee.png')",
           'back1': "url('https://octagon.mn/assets/new/static/home-header.svg')",
-          'patt': "url('../public/images/patt.png')",
+          'patt': "url('../public/images/round.png')",
+          'backtsogoo': "url('https://www.montsame.mn/files/644b3421666bc.jpeg')"
       },
     },
     fontFamily: {

@@ -11,7 +11,7 @@ export default function TeamAdd() {
   return (
     <>
       <Button onPress={onOpen} className='bg-blue-800 text-white'>Тамирчин нэмэх</Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top' size="" className="font-Roboto">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top' size="3xl" className="font-Roboto">
         <ModalContent>
           {(onClose) => (
             <>

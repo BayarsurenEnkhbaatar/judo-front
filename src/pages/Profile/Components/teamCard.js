@@ -1,9 +1,13 @@
 import { Button } from '@nextui-org/react'
 import React from 'react'
+import AthleteMoreModal from './athletemoremodal'
 
 const TeamCard = () => {
   return (
-    <div className='bg-white rounded-lg w-full shadow-lg'>
+    <div className='bg-white rounded-lg w-full shadow-lg hover:shadow-2xl hover:cursor-pointer'>
+        <h1 className='absolute z-10 text-white bg-green-600 rounded-md text-xs px-2 mt-2 ml-2'>
+          Баталгаажсан
+        </h1>
         <div>
           <img src='https://mnb.mn/uploads/202107/news/thumb/7547dac1e7d21ef23f1f2ef2ef03e364_x3.jpg' className='rounded-t-lg w-full'/>
         </div>
@@ -20,7 +24,7 @@ const TeamCard = () => {
             </div>
           </div>
           <div className='mt-2'>
-            <Button className='bg-gray-100 rounded-md w-full h-8 hover:bg-gray-200'>Дэлгэрэнгүй</Button>
+            <AthleteMoreModal/>
           </div>
         </div>
     </div>

@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+.input-section {
+  margin-bottom: 24px;
+}
+
+.winner-select {
+  margin-left: 8px;
+  margin-bottom: 12px;
+}
+
+.MatchesEditor-rounds {
+  display: flex;
+  gap: 16px;
+}

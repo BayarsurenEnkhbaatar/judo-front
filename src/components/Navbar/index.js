@@ -4,7 +4,6 @@ import {HiHome} from "react-icons/hi"
 import NavItem from './item';
 import { AuthContext } from '../../context/auth';
 import {Button} from '@nextui-org/react'
-import Login from '../Modals/login';
 
 const Navbar = ({children}) => {
 
@@ -27,6 +26,12 @@ const Navbar = ({children}) => {
         },
         {
             icon: HiHome,
+            label:'Эрэмбэ',
+            activate: pathname === '/rank',
+            href: '/rank'
+        },
+        {
+            icon: HiHome,
             label:'Мэдээ',
             activate: pathname === '/service-procedure',
             href: '/service-procedure'
@@ -36,7 +41,7 @@ const Navbar = ({children}) => {
 
 
   return (
-    <div className={pathname === '/register' ? 'font-Roboto hidden':'font-Roboto'}>
+    <div className={pathname === '/register' || pathname === '/login' ? 'font-Roboto hidden':'font-Roboto'}>
         <div className=' bg-white'>
             <div className='shadow py-2'>
                 <div className='container flex justify-between items-center'>
@@ -52,7 +57,9 @@ const Navbar = ({children}) => {
                         ))}
                     </div>
                     <div className='flex items-center gap-4 text-sm'>
-                    <Login/>
+                    <Link to='/login' className='hover:text-opacity-75 cursor-pointer'>
+                        Нэвтрэх
+                    </Link>
                     <Link to="/register" className=''>
                         <Button className='bg-[#0337A6] text-white hover:bg-opacity-70 rounded-full'>Бүртгүүлэх</Button>
                     </Link>
