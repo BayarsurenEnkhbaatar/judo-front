@@ -41,7 +41,7 @@ function App() {
           <Route index element={<DashboardProfile/>}/>
           <Route path="teams" element={<Teams/>}/>
         </Route>
-        
+
       </Routes>
       <Footer/>
     </>

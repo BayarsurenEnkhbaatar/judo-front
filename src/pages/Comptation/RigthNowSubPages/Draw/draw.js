@@ -1,144 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from 'react'
+import Onoolt16 from './Components/Onooltuud/16';
+import Onoolt4 from './Components/Onooltuud/4';
+import Onoolt8 from './Components/Onooltuud/8';
+import { groups, matches } from './data';
 
-const SubDraw = ({ type }) => {
- 
-
-  // const [data, setData] = useState();
-
-  // const participants = [
-  //   {
-  //     id: 1,
-  //     name: "Ganbat",
-  //     flag: "🇲🇳",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Sukhbat",
-  //     flag: "🇲🇳",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "sss",
-  //     flag: "🇲🇳",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "xxx",
-  //     flag: "🇲🇳",
-  //   },
-  // ];
-
-  // const stages = [
-  //   {
-  //     id: 1,
-  //     name: "Quarter Finals",
-  //     type: "single_elimination",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Semi Finals",
-  //     type: "single_elimination",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Finals",
-  //     type: "single_elimination",
-  //   },
-  // ];
-
-  // const tournament = [
-  //   {
-  //     id: 1,
-  //     name: "World championship",
-  //   },
-  // ];
-  
-  // const matches = [
-  //   {
-  //     id: 1,
-  //     stageId: 1,
-  //     round: 1,
-  //     opponent1: participants[0],
-  //     opponent2: participants[1],
-  //   },
-  //   {
-  //     id: 2,
-  //     stageId: 1,
-  //     round: 1,
-  //     opponent1: participants[2],
-  //     opponent2: participants[3],
-  //   },
-  //   {
-  //     id: 3,
-  //     stageId: 1,
-  //     round: 2,
-  //     opponent1: participants[0], // Winner of Match 1
-  //     opponent2: participants[2], // Winner of Match 2
-  //   },
-  //   {
-  //     id: 4,
-  //     stageId: 1,
-  //     round: 3,
-  //     opponent1: participants[0], // Winner of Match 3
-  //     opponent2: participants[1], // Winner of Match 4
-  //   },
-  // ];
-
-  // Group matches by round
+const SubDraw = () => {
+  const round = 3;
+  const around = 8
+  const [athletes, setAthletes] = useState(matches);
 
   return (
-    <div className="bg-white rounded-md p-4 mt-4">
-    <h1>Judo Tournament Bracket</h1>
-
-      <div className="flex items-center">
-
-        <div>
-        
-          <div className="flex items-center">
-            <div className="">
-              <div className="border h-14 w-80 mt-2">
-                <div>Test 1</div>
-                <div>Test 1</div>
-              </div>
-              <div className="border h-14 w-80 mt-2">
-                <div>Test 1</div>
-                <div>Test 1</div>
-              </div>
+    <div className='p-4 bg-white'>
+      {
+        groups.map((group, index) => {
+          return(
+            <div className='mt-8'>
+              <h1>{group.groupname} group</h1>
+              {/* {
+                around === 16 &&
+                <Onoolt16 data={athletes} group={group.groupname}/>
+              } */}
+              {
+                around === 8 &&
+                <Onoolt8 data={athletes} group={group.groupname}/>
+              }
+              {/* {
+                around === 4 &&
+                <Onoolt4 data={athletes} group={group.groupname}/>
+              } */}
             </div>
-            <div className="border h-14 w-80 mt-2">
-              <div>Test 3</div>
-              <div>Test 3</div>
-            </div>
-          </div>
+          )
+        })
+      }
+    </div>
+  )
+}
 
-          <div className="flex items-center">
-            <div className="">
-              <div className="border h-14 w-80 mt-2">
-                <div>Test 1</div>
-                <div>Test 1</div>
-              </div>
-              <div className="border h-14 w-80 mt-2">
-                <div>Test 1</div>
-                <div>Test 1</div>
-              </div>
-            </div>
-            <div className="border h-14 w-80 mt-2">
-              <div>Test 4</div>
-              <div>Test 4</div>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="border h-14 w-80 mt-2">
-          <div>Test 1</div>
-          <div>Test 1</div>
-        </div>
-
-      </div>
-
-  </div>
-  );
-};
-
-export default SubDraw;
+export default SubDraw
