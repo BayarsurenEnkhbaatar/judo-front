@@ -13,6 +13,7 @@ import SubDraw from './pages/Comptation/RigthNowSubPages/Draw/draw';
 import Login from './pages/Login';
 import CompRegDetail from './pages/Comptation/CompReg/detail';
 import Rank from './pages/Rank';
+import TeamsRegister from './pages/Profile/Pages/teams-register';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/profile" element={<Profile />}>
           <Route index element={<DashboardProfile/>}/>
           <Route path="teams" element={<Teams/>}/>
+          {/* <Route path="teams-register" element={<TeamsRegister/>}/> */}
         </Route>
 
       </Routes>

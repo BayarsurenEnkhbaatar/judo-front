@@ -4,8 +4,26 @@
     {
       "groupname": "A"
     },
+  ]
+
+  export const results = [
     {
-      "groupname": "B"
+      "id": 1,
+      "round": 1,
+      "match_number": 1,
+      "group": "A",
+      "kg": 60,
+      "comp_id":1,
+      "winner_id":1
+    },
+    {
+      "id": 2,
+      "round": 1,
+      "match_number": 2,
+      "group": "A",
+      "kg": 60,
+      "comp_id":1,
+      "winner_id":2
     },
   ]
 
@@ -224,7 +242,7 @@
           "id":1,
           "athlete": {
                 "id":1,
-                "username":"Uchral",
+                "username":"GGGGGGGGGGGGGGG",
                 "country": "MNG"
           },
           "compid": 1,
@@ -279,7 +297,7 @@
       "athlete1": {
         "id":1,
         "athlete": {
-              "id":111,
+              "id":"111",
               "username":"Uchral",
               "country": "MNG"
         },

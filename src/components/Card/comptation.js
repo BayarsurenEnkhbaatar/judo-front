@@ -1,18 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Button} from '@nextui-org/react'
 import {Link} from 'react-router-dom'
+import { ATTYPES } from '../../utils/types'
+import { IMAGE_GET } from '../../utils/requests'
 
-const CompCard = () => {
+const CompCard = ({data}) => {
+  const [profile, setProfile] = useState();
+  const Get = async () => {
+    const res = await IMAGE_GET({key:data.cover_img});
+    setProfile(res);
+  }
+  
+  useEffect(() => {
+    Get();
+  }, [data]);
+
   return (
     <div className='font-Roboto bg-white hover:shadow-xl'>
-        <Link to='/comptation/detail' className='bg-white rounded-lg shadow-md cursor-pointer hover:shadow-xl group'>
-            <img className='rounded-t-lg' src='https://res.cloudinary.com/duu3v9gfg/image/fetch/t_fit_1920/https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2017/08/MGL_POD-1503614218-1503614219.jpg'/>
+        <Link to={`/comptation/${data.id}`} className='bg-white rounded-lg shadow-md cursor-pointer hover:shadow-xl group'>
+            <img className='rounded-t-lg h-36' src={profile}/>
             <div className='p-4 '>
                 <div className='flex items-center justify-between'>
-                  <p className='text-xs'>2022-10-23 өдөр Эрдэнэт хот</p>
-                  <div className='p-1 bg-green-600 rounded-md text-white text-xs'>Өсвөр үе</div>
+                  <p className='text-xs'>{new Date(data.start_date).getFullYear()}-{new Date(data.start_date).getMonth()}-{new Date(data.start_date).getDate()} өдөр {data.province}</p>
+                      {
+                        data.type === ATTYPES.JUNIOR &&
+                        <div className='p-1 bg-green-600 rounded-md text-white text-xs'>
+                          Өсвөр үе
+                        </div>
+                      }
+                      {
+                        data.type === ATTYPES.CADET &&
+                        <div className='p-1 bg-green-600 rounded-md text-white text-xs'>
+                          Залуучууд
+                        </div>
+                      }
+                      {
+                        data.type === ATTYPES.SENIOR &&
+                        <div className='p-1 bg-green-600 rounded-md text-white text-xs'>
+                          Насанд хүрэгчид
+                        </div>
+                      }
+                      {
+                        data.type === ATTYPES.MASTERS &&
+                        <div className='p-1 bg-green-600 rounded-md text-white text-xs'>
+                          Мастерс
+                        </div>
+                      }
                 </div>
-                <h1 className='text-xl font-semibold'>Боржин цом</h1>
+                <h1 className='text-xl font-semibold'>{data.name}</h1>
                 <Button size='sm' className='mt-8'>Тэмцээнд бүртгүүлэх</Button>
             </div>
         </Link>

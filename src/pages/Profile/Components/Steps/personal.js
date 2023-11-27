@@ -37,8 +37,8 @@ const PersonalStep = () => {
                     <Input type='date'/>
                 </div>
                 <div className="mt-4">
-                    <h1>Утасны дугаар 1</h1>
-                    <Input placeholder='Утасны дугаар 1 бичих'/>
+                    <h1>Регистерийн дугаар</h1>
+                    <Input placeholder='Регистерийн дугаар бичих'/>
                 </div>
                 <div className="mt-4">
                     <h1>Утасны дугаар 2</h1>
