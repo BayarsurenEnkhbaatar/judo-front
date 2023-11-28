@@ -9,6 +9,7 @@ export const GET = async (url) => {
         return response
     }catch(error){
         toast.error("Алдаа гарлаа")
+        console.log(error)
         return error
     }
 };

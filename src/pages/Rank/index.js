@@ -9,7 +9,7 @@ const Rank = () => {
               <h1 className='text-3xl font-Roboto'>Тамирчдын эрэмбийн мэдээлэл</h1>
             </div>
         </div>
-        <div className='container mt-8'>
+        <div className='container  mt-8'>
           <div className='flex gap-4'>
             <div>
               <div className='bg-white rounded-md w-28'>
