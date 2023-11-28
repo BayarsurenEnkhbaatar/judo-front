@@ -13,7 +13,7 @@ const Sidebar = (data) => {
     const [profile, setProfile] = useState();
 
     const Get = async () => {
-      const res = await IMAGE_GET({key:data.data.logo});
+      const res = await IMAGE_GET({key:data?.data?.logo});
       setProfile(res);
     }
 

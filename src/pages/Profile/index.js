@@ -15,6 +15,11 @@ const Profile = () => {
     try{
       const res = await axios.get(org_uri+`/${currentUser}`)
       setUser(res.data)
+      if(res.data === null){
+        toast.error("Таны нэвтрэх хугацаа дууссан байна дахин нэвтэрнэ үү!")
+        logout();
+        return navigate('/login');
+      }
     }catch(err){
       console.log(err)
       if(err.response.status === 444){
