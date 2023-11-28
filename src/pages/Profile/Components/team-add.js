@@ -29,7 +29,7 @@ export default function TeamAdd({callback}) {
       setLoad(false)
       onOpenChange(false);
       handlecallback();
-      setData({...data, username:"", lastname:"", gender:"", birth_date:"", phone_no:"", register_no:"", profile_img:"", document_img:""})
+      setData({...data, username:"", lastname:"", gender:"", birth_date:"", phone_no:"", register_no:"", profile_img:"", document_img:""});
       return toast.success("Амжилттай нэмлээ")
     }
     setLoad(false)
@@ -106,7 +106,7 @@ export default function TeamAdd({callback}) {
                                       <h1>Төрсөн он сар өдөр</h1>
                                       {/* <Input onChange={(e)=> setData({...data, birth_date:e.target.value})} value={data.birth_date} type='date'/> */}
                                       {/* <DatePicker onChange={onChangeDate} className="w-full py-2 bg-gray-100"/> */}
-                                      <input onChange={(e) =>  setData({...data, birth_date: e.target.value})} type='date' className="bg-gray-100 w-full p-2 rounded"/>
+                                      <input onChange={(e) =>  setData({...data, birth_date: e.target.value})} type='date' className="bg-gray-100 w-full p-2 rounded" value={data.birth_date}/>
                                   </div>
                                   <div className="mt-4">
                                       <h1>Регистерийн дугаар</h1>
