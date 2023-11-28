@@ -16,6 +16,9 @@ export default function TeamAdd({callback}) {
   const [imgload1, setImgload1] = useState(false);
 
   const Submit = async () => {
+    if(imgload || imgload1){
+      return toast.warning("Зураг хараахан ороогүй байна... түр хүлээнэ үү")
+    }
     setLoad(true)
     if(data.username === "" || data.lastname === "" || data.gender === "" || data.birth_date === "" || data.phone_no === "" || data.register_no === "" || data.profile_img === "" || data.document_img === "" ){
       setLoad(false);
@@ -45,6 +48,7 @@ export default function TeamAdd({callback}) {
       setData({...data, profile_img:res});
       setImgload(false);
     } catch (error) {
+      setImgload(false);
       console.error('Error uploading file', error);
     }
   };
@@ -58,6 +62,7 @@ export default function TeamAdd({callback}) {
       setData({...data, document_img:res});
       setImgload1(false);
     } catch (error) {
+      setImgload1(false);
       console.error('Error uploading file', error);
     }
   };
@@ -69,11 +74,11 @@ export default function TeamAdd({callback}) {
   return (
     <>
       <Button onPress={onOpen} className='bg-blue-800 text-white xs:text-xs' size="sm">Тамирчин бүртгүүлэх</Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top' size="3xl" className="font-Roboto">
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top' size="xl" className="font-Roboto">
         <ModalContent>
           {(onClose) => (
             <>
-                <div className="xs:mx-4 md:container py-4 ">
+                <div className="mx-8">
                     <h1 className="text-center text-2xl font-bold mt-4">Тамирчин Бүргүүлэх</h1>
                     <p className="text-center text-xs mt-2">Та өөрийн клубийн тамирчны мэдээллийг үнэн зөв бөглөн илгээнэ үү.</p>
                     {

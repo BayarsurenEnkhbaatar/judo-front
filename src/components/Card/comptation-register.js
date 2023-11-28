@@ -27,7 +27,7 @@ const Comptationregister = ({ data }) => {
 
   return (
     <div className='bg-white rounded-md px-4 py-2 mt-1'>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center flex-wrap'>
             <h1 className='font-bold'>{data.data.kg} кг</h1>
             <div className='flex items-center gap-2 flex-wrap'>
                 {

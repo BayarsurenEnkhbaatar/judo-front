@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Button} from '@nextui-org/react'
+import {Button, Skeleton} from '@nextui-org/react'
 import {Link} from 'react-router-dom'
 import { ATTYPES } from '../../utils/types'
 import { IMAGE_GET } from '../../utils/requests'
@@ -18,7 +18,14 @@ const CompCard = ({data}) => {
   return (
     <div className='font-Roboto bg-white hover:shadow-xl'>
         <Link to={`/comptation/${data.id}`} className='bg-white rounded-lg shadow-md cursor-pointer hover:shadow-xl group'>
-            <img className='rounded-t-lg h-36' src={profile}/>
+            {
+              profile?
+              <img className='rounded-t-lg h-36 w-full' src={profile}/>
+              :
+              <Skeleton>
+                <div className='rounded-t-lg h-36 w-full'></div>
+              </Skeleton>
+            }
             <div className='p-4 '>
                 <div className='flex items-center justify-between'>
                   <p className='text-xs'>{new Date(data.start_date).getFullYear()}-{new Date(data.start_date).getMonth()}-{new Date(data.start_date).getDate()} өдөр {data.province}</p>

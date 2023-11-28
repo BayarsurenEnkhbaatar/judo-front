@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox, Input, Spinner} from "@nextui-org/react";
 import {AuthContext} from '../../context/auth';
 import { GET, POST } from "../../utils/requests";
 import { athlete_to_comptation_uri, org_uri } from "../../utils/url";
@@ -13,11 +13,13 @@ export default function ComptationRegisterModal({data, callback}) {
   const[ath, setAth] = useState([]);
   const [search, setSearch] = useState('');
   const [checkedValue, setValue] = useState([]);
-  const [load, setLoad] = useState({submit:false, athletes:[]});
+  const [load, setLoad] = useState({submit:false, cardload:false, athletes:[]});
 
   const Get = async() => {
+    setLoad({...load, cardload:true});
     const res = await GET(org_uri+ `-athletes?token=${currentUser}&gender=${data.gender.gender}&name=${search}`);
     setAth(res.data);
+    setLoad({...load, cardload:false});
   }
 
   useEffect(() => {
@@ -45,7 +47,6 @@ export default function ComptationRegisterModal({data, callback}) {
   const Submit = async () => {
     setLoad({...load, submit:true});
     const res = await POST({uri: athlete_to_comptation_uri, data:{token: currentUser, kg:data.data.kg, athlete_ids: checkedValue, category_id: data.gender.id, comp_id:params.slug}});
-    console.log(res.data);
     if(res.status === 200){
       if(res.data.length > 0){
         console.log(res.data)
@@ -66,7 +67,7 @@ export default function ComptationRegisterModal({data, callback}) {
 
   return (
     <>
-      <Button onPress={open} className='' size='sm'>Тамирчин бүртгүүлэх</Button>
+      <Button onPress={open} className='xs:mt-2 md:mt-0' size='sm'>Тамирчин бүртгүүлэх</Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top'>
         <ModalContent>
           {(onClose) => (
@@ -96,20 +97,30 @@ export default function ComptationRegisterModal({data, callback}) {
                   }
                     <h1 className="mt-3 text-xs">Тамирчдын жагсаалт</h1>
                     {
-                      ath.map((item, index) => {
-                        return(
-                          <div className="mt-2" key={index}>
-                              <div className="bg-gray-200 p-2 rounded-md flex justify-between ">
-                                  <div className="flex">
-                                    <Checkbox onChange={(e) => handleChange({ checked:e.target.checked, id:item.id})}/>
-                                    <h1>{item.username}</h1>
+                      load.cardload ?
+                      <div className="flex justify-center items-center py-4">
+                        <Spinner/>
+                        <h1>Уншиж байна ...</h1>
+                      </div>
+                      :
+                      <>
+                        {
+                          ath.map((item, index) => {
+                            return(
+                              <div className="mt-2" key={index}>
+                                  <div className="bg-gray-200 p-2 rounded-md flex justify-between ">
+                                      <div className="flex">
+                                        <Checkbox onChange={(e) => handleChange({ checked:e.target.checked, id:item.id})}/>
+                                        <h1 className="uppercase">{item.lastname.charAt(0)}.{item.username}</h1>
+                                      </div>
+                                      <h1 className="text-sm" onClick={haha}>{new Date().getFullYear() - new Date(item.birth_date).getFullYear()} нас</h1>
                                   </div>
-                                  <h1 className="text-sm" onClick={haha}>16 нас</h1>
                               </div>
-                          </div>
-                        )
-                      })
-                    }
+                            )
+                          })
+                        }
+                      </>
+                      }
                 </div>
               </ModalBody>
               <ModalFooter>

@@ -41,21 +41,30 @@ const CompRegDetail = () => {
     <div className='font-Roboto bg-gray-200'>
       <ComptoOrgRegister/>
       <div className=' bg-blue-900 mt-1'>
-        <div className='container'>
+        <div className='md:container xs:mx-4'>
           <div className='py-8'>
             <h1 className='text-3xl font-bold uppercase text-white'>{comp.name}</h1>
             <p className='text-white text-xl font-light uppercase mt-1'>Тэмцээний бүртгэл</p>
           </div>
         </div>
       </div>
-      <div className='container py-4'>
+      <div className='md:container xs:mx-4 py-4'>
      {
        comporg?.org?.status === STATUS.REQUESTED &&
-       <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
-        <h1 className='text-center'>Тэмцээнд мэдүүлэг өгсөн <span className='font-bold'>10</span> тамирчин байна. Мандатын төлбөр <span className='font-bold'>20,000</span> төгрөг</h1>
-        <h1 className=''>Гүйлгээний утга <span className='font-bold uppercase'>Genco</span> Шилжүүлэх данс <span className='font-bold uppercase'>8080808080</span> <span className='text-[10px] text-black bg-gray-100 p-1 rounded-md cursor-pointer hover:bg-gray-200'>данс хуулах</span></h1>
-        <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
-      </div>
+        <div className=''>
+          <div className='hidden md:block'>
+            {/* <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
+              <h1 className='text-center'>Тэмцээнд мэдүүлэг өгсөн <span className='font-bold'>10</span> тамирчин байна. Мандатын төлбөр <span className='font-bold'>20,000</span> төгрөг</h1>
+              <h1 className=''>Гүйлгээний утга <span className='font-bold uppercase'>Genco</span> Шилжүүлэх данс <span className='font-bold uppercase'>8080808080</span> <span className='text-[10px] text-black bg-gray-100 p-1 rounded-md cursor-pointer hover:bg-gray-200'>данс хуулах</span></h1>
+              <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
+            </div> */}
+          </div>
+          <div className='xs:block hidden'>
+            <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
+              <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
+            </div>
+          </div>
+        </div>
      }
      {
        comporg?.org?.status === STATUS.APPROVED &&
