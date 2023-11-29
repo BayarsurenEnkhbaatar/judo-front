@@ -45,7 +45,7 @@ export default function TeamAdd({callback}) {
     const file = e.target.files[0];
     try {
       const res = await IMAGE_UPLOAD({file:file})
-      setData({...data, profile_img:res});
+      setData({...data, document_img:res});
       setImgload(false);
     } catch (error) {
       setImgload(false);
@@ -59,7 +59,7 @@ export default function TeamAdd({callback}) {
     const file = e.target.files[0];
     try {
       const res = await IMAGE_UPLOAD({file:file})
-      setData({...data, document_img:res});
+      setData({...data, profile_img:res});
       setImgload1(false);
     } catch (error) {
       setImgload1(false);
@@ -127,7 +127,7 @@ export default function TeamAdd({callback}) {
                           <div className='mt-4'>
                               <div>
                                 <h1>Цээж зураг</h1>
-                                <input className="mt-1" type='file' onChange={handleUpload}/>
+                                <input className="mt-1" type='file' onChange={handleUpload1}/>
                                 {
                                   imgload &&
                                   <div className="mt-1 flex items-center gap-2">
@@ -138,7 +138,7 @@ export default function TeamAdd({callback}) {
                               </div>
                               <div className="mt-4">
                                 <h1>Бичиг баримт</h1>
-                                <input className="mt-1" type='file' onChange={handleUpload1}/>
+                                <input className="mt-1" type='file' onChange={handleUpload}/>
                                 {
                                   imgload1 &&
                                   <div className="mt-1 flex items-center gap-2">

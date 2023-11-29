@@ -14,7 +14,7 @@ const Round2Card = ({data}) => {
                   <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
                   <h1>{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
                 </div>
-                <h1 className="uppercase font-bold text-xs mr-1">{data?.athlete1.organization.name.substring(0, 3)}</h1>
+                {/* <h1 className="uppercase font-bold text-xs mr-1">{data?.athlete1.organization.name.substring(0, 3)}</h1> */}
               </div>
             }
           </div>
@@ -28,7 +28,7 @@ const Round2Card = ({data}) => {
                   <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
                   <h1>{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
                 </div>
-                <h1 className="uppercase font-bold text-xs mr-1">{data?.athlete2.organization.name.substring(0, 3)}</h1>
+                {/* <h1 className="uppercase font-bold text-xs mr-1">{data?.athlete2.organization.name.substring(0, 3)}</h1> */}
               </div>
             }
           </div>
