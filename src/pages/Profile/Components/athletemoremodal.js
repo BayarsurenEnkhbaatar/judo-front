@@ -18,7 +18,7 @@ export default function AthleteMoreModal({data}) {
 console.log(data)
   return (
     <>
-      <Button  onPress={onOpen} className='bg-gray-100 rounded-md w-full h-8 hover:bg-gray-200'>Дэлгэрэнгүй</Button>
+      <Button  onPress={onOpen} className='bg-gray-100 rounded-md w-full h-8 hover:bg-gray-200' size="sm">Дэлгэрэнгүй</Button>
       <Modal placement='top' isOpen={isOpen} onOpenChange={onOpenChange} size="2xl" >
       {/* backdrop='blur' */}
         <ModalContent>

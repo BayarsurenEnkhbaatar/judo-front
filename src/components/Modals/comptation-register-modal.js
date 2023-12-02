@@ -5,8 +5,10 @@ import { GET, POST } from "../../utils/requests";
 import { athlete_to_comptation_uri, org_uri } from "../../utils/url";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
+import { STATUS } from "../../utils/types";
 
-export default function ComptationRegisterModal({data, callback}) {
+export default function ComptationRegisterModal({data, callback, org}) {
+  console.log(org);
   const params = useParams();
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const {currentUser} = useContext(AuthContext);
@@ -45,11 +47,13 @@ export default function ComptationRegisterModal({data, callback}) {
   }
 
   const Submit = async () => {
+    if(org === STATUS.APPROVED){
+      return toast.warning("Таны мэдүүлэг баталгаажсан тул мэдүүлэг өөрчлөх боломжгүй");
+    }
     setLoad({...load, submit:true});
     const res = await POST({uri: athlete_to_comptation_uri, data:{token: currentUser, kg:data.data.kg, athlete_ids: checkedValue, category_id: data.gender.id, comp_id:params.slug}});
     if(res.status === 200){
       if(res.data.length > 0){
-        console.log(res.data)
         setLoad({...load, submit:false});
         handleCallback();
         return setLoad({...data, athletes:res.data});

@@ -12,7 +12,7 @@ const Repechage1 = ({data}) => {
               :
               <div className='flex items-center gap-2'>
                 <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
+                <h1 className='xs:text-[10px] md:text-xs'>{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
               </div>
             }
           </div>
@@ -23,7 +23,7 @@ const Repechage1 = ({data}) => {
               :
               <div className='flex items-center gap-2'>
                 <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
+                <h1 className='xs:text-[10px] md:text-xs'>{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
               </div>
             }
           </div>

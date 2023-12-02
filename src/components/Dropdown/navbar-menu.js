@@ -18,6 +18,9 @@ export default function NavbarProfileMenu() {
         <DropdownItem className="py-2">
             <Link to='/profile/teams' className="py-2">Тамирчдын мэдээлэл</Link>
         </DropdownItem>
+        <DropdownItem className="py-2">
+            <Link to='/profile/teams-add' className="py-2">Тамирчин бүртгэх</Link>
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

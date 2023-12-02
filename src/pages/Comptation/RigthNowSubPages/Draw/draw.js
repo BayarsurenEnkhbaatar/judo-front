@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
-import Onoolt8 from './Components/Onooltuud/8';
+import Onoolt8 from './Onooltuud/8';
 import {GET} from '../../../../utils/requests';
 import { comp_to_uri, final_uri, group_uri, matches_uri, repechage_uri } from '../../../../utils/url';
-import Onoolt16 from './Components/Onooltuud/16';
-import Onoolt4 from './Components/Onooltuud/4';
+import Onoolt16 from './Onooltuud/16';
+import Onoolt4 from './Onooltuud/4';
 import {GENDER} from '../../../../utils/types'
 import Repechage from './RepechageAndFinal/repechage';
 import Final from './RepechageAndFinal/final';
+import Onoolt32 from './Onooltuud/32';
 
 const SubDraw = () => {
   const params = useParams();
@@ -119,6 +120,10 @@ const SubDraw = () => {
                       return(
                         <div className='md:mt-2' key={index}>
                           <h1 className='text-center font-Roboto font-bold'> Хэсэг {group.group_name} {data.kg} кг</h1>
+                          {
+                            group.group_number === 32 &&
+                            <Onoolt32 data={data.athletes} group={group.group_name}/>
+                          }
                           {
                             group.group_number === 16 &&
                             <Onoolt16 data={data.athletes} group={group.group_name}/>

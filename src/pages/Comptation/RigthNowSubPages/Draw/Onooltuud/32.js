@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import Round1Card from '../../Cards/round1card'
-import Round2Card from '../../Cards/round2card'
-import Round3Card from '../../Cards/round3card'
+import Round1Card from '../Cards/Card32/round1card';
+import Round2Card from '../Cards/Card32/round2card';
+import Round3Card from '../Cards/Card32/round3card';
+import Round4Card from '../Cards/Card32/round4card';
+import Round5Card from '../Cards/Card32/round5card';
 
-const Onoolt16 = ({data, group}) => {
+const Onoolt32 = ({data, group}) => {
     const round1 = data.filter(item => item.group === group).filter(item => item.round === 1).sort((a, b) => a.match_number - b.match_number);
     const round2 = data.filter(item => item.group === group).filter(item => item.round === 2).sort((a, b) => a.match_number - b.match_number);
     const round3 = data.filter(item => item.group === group).filter(item => item.round === 3).sort((a, b) => a.match_number - b.match_number);
     const round4 = data.filter(item => item.group === group).filter(item => item.round === 4).sort((a, b) => a.match_number - b.match_number);
     const round5 = data.filter(item => item.group === group).filter(item => item.round === 5).sort((a, b) => a.match_number - b.match_number);
+    const round6 = data.filter(item => item.group === group).filter(item => item.round === 6).sort((a, b) => a.match_number - b.match_number);
 
   return (
     <div className='flex overflow-auto'>
@@ -33,19 +36,9 @@ const Onoolt16 = ({data, group}) => {
             }
         </div>
 
-        <div className={'flex justify-between flex-col my-[70px]'}>
+        <div className={'flex justify-between flex-col md:my-[44px] xs:my-[42px]'}>
             {
                 round3.map((data, index) => {
-                    return(
-                        <Round2Card data={data} key={index}/>
-                    )
-                })
-            }
-        </div>
-
-        <div className={'flex justify-between flex-col my-[98px]'}>
-            {
-                round4.map((data, index) => {
                     return(
                         <Round3Card data={data} key={index}/>
                     )
@@ -53,14 +46,43 @@ const Onoolt16 = ({data, group}) => {
             }
         </div>
 
+        <div className={'flex justify-between flex-col md:my-[92px] xs:my-[90px]'}>
+            {
+                round4.map((data, index) => {
+                    return(
+                        <Round4Card data={data} key={index}/>
+                    )
+                })
+            }
+        </div>
+
+        <div className={'flex justify-between flex-col md:my-[180px] xs:my-[180px]'}>
+            {
+                round5.map((data, index) => {
+                    return(
+                        <Round5Card data={data} key={index}/>
+                    )
+                })
+            }
+        </div>
+
+        {/* <div className={'flex justify-between flex-col my-[98px]'}>
+            {
+                round4.map((data, index) => {
+                    return(
+                        <Round4Card data={data} key={index}/>
+                    )
+                })
+            }
+        </div> */}
+
         <div className="flex items-center font-Roboto text-sm ml-1">
             {
-              round5[0]?.athlete1?.id === 111 ?
+              round6[0]?.athlete1?.id === 111 ?
               <h1 className='border-b xs:w-20 md:w-40'></h1>
               :
               <div className='flex items-center gap-2'>
-                <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{round4[0]?.athlete1.lastname.charAt(0)}.{round4[0]?.athlete1?.username}</h1>
+                <h1 className="xs:text-[10px] md:text-xs">{round4[0]?.athlete1.lastname.charAt(0)}.{round4[0]?.athlete1?.username}</h1>
               </div>
             }
         </div>
@@ -69,4 +91,4 @@ const Onoolt16 = ({data, group}) => {
   )
 }
 
-export default Onoolt16
+export default Onoolt32

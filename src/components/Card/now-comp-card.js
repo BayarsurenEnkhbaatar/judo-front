@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NowCompCard = ({data}) => {
   return (
@@ -13,7 +13,7 @@ const NowCompCard = ({data}) => {
                     <img className='rounded-full h-12' src='https://koo-bucket-2022.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2022/10/25110837/judo_logo.jpg'/>
                 </div>
                 
-                <p className='text-xs mt-4 text-center md:text-xs font-bold'>{new Date(data.start_date).getFullYear()} оны {new Date(data.start_date).getMonth()} сарын {new Date(data.start_date).getDate()}-{new Date(data.end_date).getDate()} ны хооронд</p>
+                <p className='text-xs mt-4 text-center md:text-xs font-bold'>{new Date(data.start_date).getFullYear() + 1} оны {new Date(data.start_date).getMonth()} сарын {new Date(data.start_date).getDate()}-{new Date(data.end_date).getDate()} ны хооронд</p>
                 <p className='text-xs text-center md:text-xs font-bold'>{data.province} {data.sum}</p>
             </div>
        </div>

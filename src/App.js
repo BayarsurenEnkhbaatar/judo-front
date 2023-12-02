@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import CompRegDetail from './pages/Comptation/CompReg/detail';
 import Rank from './pages/Rank';
 import TeamsRegister from './pages/Profile/Pages/teams-register';
+import TeamsAdd from './pages/Profile/Pages/teams-add';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/profile" element={<Profile />}>
           <Route index element={<DashboardProfile/>}/>
           <Route path="teams" element={<Teams/>}/>
+          <Route path="teams-add" element={<TeamsAdd/>}/>
           {/* <Route path="teams-register" element={<TeamsRegister/>}/> */}
         </Route>
 

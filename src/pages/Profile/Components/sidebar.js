@@ -46,6 +46,11 @@ const Sidebar = (data) => {
             <FaUser color='#777B89' size={14}/>
             <h1 className='text-[13px]'>Тамирчдын мэдээлэл</h1>
           </Link>
+          <Link to='/profile/teams-add' className={pathname === "/profile/teams-add"?'bg-gray-100 py-3 px-4 flex items-center gap-4 rounded-xl mt-1':
+          'py-3 px-4 flex items-center gap-4 rounded-xl mt-1 hover:bg-gray-100 cursor-pointer'}>
+            <FaUser color='#777B89' size={14}/>
+            <h1 className='text-[13px]'>Тамирчин бүртгүүлэх</h1>
+          </Link>
 
           <div className='py-3 px-4 flex items-center gap-4 rounded-xl mt-8 hover:bg-gray-100 cursor-pointer' onClick={logout}>
             <FiLogOut color='#e76a6a' size={14}/>

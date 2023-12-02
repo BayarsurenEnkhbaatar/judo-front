@@ -1,7 +1,6 @@
 import React from 'react'
-import Round1Card from '../../Cards/round1card'
-import Round2Card from '../../Cards/round2card'
-import Round3Card from '../../Cards/round3card'
+import Round2Card from '../Cards/Card4/round2card';
+import Round3Card from '../Cards/Card4/round3card';
 
 const Onoolt4 = ({data, group}) => {
     const round1 = data.filter(item => item.group === group).filter(item => item.round === 1).sort((a, b) => a.match_number - b.match_number);

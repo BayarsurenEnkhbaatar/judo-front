@@ -9,6 +9,7 @@ import ComptoOrgRegister from '../../../components/Modals/org-comp-register';
 import { AuthContext } from '../../../context/auth';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import MeduulegBatalgaajuulah from '../../../components/Modals/meduueg-batalgaajuulah';
 
 const CompRegDetail = () => {
   const [categorys, setCategorys] = useState([]);
@@ -52,16 +53,10 @@ const CompRegDetail = () => {
      {
        comporg?.org?.status === STATUS.REQUESTED &&
         <div className=''>
-          <div className='hidden md:block'>
-            {/* <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
-              <h1 className='text-center'>Тэмцээнд мэдүүлэг өгсөн <span className='font-bold'>10</span> тамирчин байна. Мандатын төлбөр <span className='font-bold'>20,000</span> төгрөг</h1>
-              <h1 className=''>Гүйлгээний утга <span className='font-bold uppercase'>Genco</span> Шилжүүлэх данс <span className='font-bold uppercase'>8080808080</span> <span className='text-[10px] text-black bg-gray-100 p-1 rounded-md cursor-pointer hover:bg-gray-200'>данс хуулах</span></h1>
-              <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
-            </div> */}
-          </div>
-          <div className='xs:block hidden'>
+          <div className=''>
             <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
               <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
+              <MeduulegBatalgaajuulah ath={comporg}/>
             </div>
           </div>
         </div>
@@ -89,7 +84,7 @@ const CompRegDetail = () => {
                       data: it
                     };
                     return(
-                      <Comptationregister key={idx} data={a}/>
+                      <Comptationregister key={idx} data={a} org={comporg?.org?.status}/>
                     )
                   })
                 }

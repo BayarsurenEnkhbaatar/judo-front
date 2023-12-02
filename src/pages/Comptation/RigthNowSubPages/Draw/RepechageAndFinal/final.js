@@ -36,9 +36,9 @@ const Final = ({data}) => {
                     round3[0]?.athlete1_id === 111 ?
                     <h1 className='text-white'>.</h1>
                     :
-                    <div className='flex items-center gap-2 font-Roboto xs:text-xs md:text-sm'>
+                    <div className='flex items-center gap-2 font-Roboto xs:text-xs md:text-sm xs:w-28 md:32'>
                         <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                        <h1>{round3[0]?.athlete1?.lastname.charAt(0)}.{round3[0]?.athlete1?.username}</h1>
+                        <h1 className='xs:text-[10px] md:text-xs'>{round3[0]?.athlete1?.lastname.charAt(0)}.{round3[0]?.athlete1?.username}</h1>
                     </div>
                 }
             </div>

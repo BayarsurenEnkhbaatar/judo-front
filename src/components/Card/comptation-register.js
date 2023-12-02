@@ -7,7 +7,7 @@ import { comp_uri } from '../../utils/url'
 import AthleteDelete from '../Modals/athlete-delete'
 import ComptationRegisterModal from '../Modals/comptation-register-modal'
 
-const Comptationregister = ({ data }) => {
+const Comptationregister = ({ data, org }) => {
   const {currentUser} = useContext(AuthContext);
   const params = useParams();
   const [athlete, setAthlete] = useState([]);
@@ -45,7 +45,7 @@ const Comptationregister = ({ data }) => {
                   })
                 }
             </div>
-            <ComptationRegisterModal data={data} callback={callback}/>
+            <ComptationRegisterModal data={data} callback={callback} org={org}/>
         </div>
     </div>
   )

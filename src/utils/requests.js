@@ -58,7 +58,9 @@ export const IMAGE_UPLOAD = async ({file}) => {
         const response = await axios.post(utils_uri+`/img-upload` , form)
         return response.data
     }catch(error){
-        return error
+        console.log(error);
+        toast.error("Зураг хадгалахад алдаа гарлаа дахин оролдоно уу !");
+        return ""
     }
 
 };

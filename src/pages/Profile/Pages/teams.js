@@ -48,7 +48,7 @@ const Teams = () => {
     <div className='bg-white p-8 rounded-xl xs:mt-2'>
       <div className='flex items-center justify-between'>
         <h1 className='font-semibold xs:text-sm md:text-2xl'>Тамирчдын бүртгэл</h1>
-        <TeamAdd callback={callback}/>
+        {/* <TeamAdd callback={callback}/> */}
         {/* <Link to='/profile/teams-register'>Тамирчин бүртгүүлэх</Link> */}
       </div>
       <h1 className='xs:text-xs md:text-sm mt-2'>Тамирчны мэдээллийг үнэн зөв илгээх болон зөв бөглөх талаас нь анхаарах хэрэгтэй</h1>
@@ -57,14 +57,16 @@ const Teams = () => {
       <div className='my-2'>
         <Input placeholder='Хайлт хийх' value={pagination.username} onChange={(e) => setPagination({...pagination, username:e.target.value})}/>
       </div>
-        <div className='mt-4 grid xs:grid-cols-2 md:grid-cols-5 gap-2'>
-          {
-            data.map((item, index) => {
-              return(
-                <TeamCard key={index} data={item} callback={callback}/>
-              )
-            })
-          }
+        <div className=''>
+          <div className='mt-4 grid xs:grid-cols-2 md:grid-cols-5 gap-2'>
+            {
+              data.map((item, index) => {
+                return(
+                  <TeamCard key={index} data={item} callback={callback}/>
+                )
+              })
+            }
+          </div>
         </div>
           {
             data.length === 0 &&

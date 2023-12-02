@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Round1Card from '../../Cards/round1card'
-import Round2Card from '../../Cards/round2card'
-import Round3Card from '../../Cards/round3card'
+import Round1Card from '../Cards/Card8/round1card';
+import Round2Card from '../Cards/Card8/round2card';
+import Round3Card from '../Cards/Card8/round3card';
 
 const Onoolt8 = ({data, group, onoolt_type}) => {
     const round1 = data.filter(item => item.group === group).filter(item => item.round === 1).sort((a, b) => a.match_number - b.match_number);
@@ -48,9 +48,8 @@ const Onoolt8 = ({data, group, onoolt_type}) => {
               round4[0]?.athlete1?.id === 111 ?
               <h1 className='border-b xs:w-20 md:w-40'></h1>
               :
-              <div className='flex items-center gap-2'>
-                <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{round4[0]?.athlete1.lastname.charAt(0)}.{round4[0]?.athlete1?.username}</h1>
+              <div className='flex items-center gap-2 xs:w-20 md:w-40'>
+                <h1 className="xs:text-[10px] md:text-xs">{round4[0]?.athlete1.lastname.charAt(0)}.{round4[0]?.athlete1?.username}</h1>
               </div>
             }
         </div>
