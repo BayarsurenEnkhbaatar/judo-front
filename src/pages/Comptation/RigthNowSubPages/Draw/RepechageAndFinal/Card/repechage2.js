@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 const Repechage2 = ({data}) => {
 
   return (
-    <div className='xs:pt-4 md:pt-7 flex flex-col'>
-      <div className='border-b xs:w-20 md:w-40 border-amber-700'>
+    <div className='xs:pt-4 md:pt-7 flex flex-col '>
+      <div className='border-b xs:w-20 md:w-40 border-amber-600'>
         {
           data?.athlete1_id === 111 ?
           <h1 className='text-white'>.</h1>

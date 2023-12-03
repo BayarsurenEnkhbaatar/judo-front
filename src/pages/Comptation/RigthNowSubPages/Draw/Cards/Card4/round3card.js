@@ -9,8 +9,7 @@ const Round3Card = ({data}) => {
               <h1 className='text-white'>.</h1>
               :
               <div className='flex items-center gap-2'>
-                <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
+                <h1 className="xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap">{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
               </div>
             }
         </div>
@@ -20,8 +19,7 @@ const Round3Card = ({data}) => {
               <h1 className='text-white'>.</h1>
               :
               <div className='flex items-center gap-2'>
-                <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
+                <h1 className="xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap">{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
               </div>
             }
         </div>

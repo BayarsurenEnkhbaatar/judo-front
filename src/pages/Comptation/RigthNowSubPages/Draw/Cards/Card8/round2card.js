@@ -11,7 +11,7 @@ const Round2Card = ({data}) => {
               :
               <div className='flex items-center justify-between'>
                 <div className="flex items-center gap-2">
-                  <h1 className="xs:text-[10px] md:text-xs">{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
+                  <h1 className="xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap max-w-[14ch]">{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
                 </div>
                 {/* <h1 className="uppercase font-bold text-xs mr-1">{data?.athlete1.organization.name.substring(0, 3)}</h1> */}
               </div>
@@ -24,7 +24,7 @@ const Round2Card = ({data}) => {
               :
               <div className='flex items-center justify-between'>
                 <div className="flex items-center gap-2">
-                  <h1 className="xs:text-[10px] md:text-xs">{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
+                  <h1 className="xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap max-w-[14ch]">{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
                 </div>
                 {/* <h1 className="uppercase font-bold text-xs mr-1">{data?.athlete2.organization.name.substring(0, 3)}</h1> */}
               </div>

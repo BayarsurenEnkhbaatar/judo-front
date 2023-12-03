@@ -35,8 +35,7 @@ const Onoolt4 = ({data, group}) => {
               <h1 className='border-b xs:w-20 md:w-40'></h1>
               :
               <div className='flex items-center gap-2'>
-                <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1>{round3[0]?.athlete1.lastname.charAt(0)}.{round3[0]?.athlete1?.username}</h1>
+                <h1  className="xs:text-[10px] md:text-xs">{round3[0]?.athlete1.lastname.charAt(0)}.{round3[0]?.athlete1?.username}</h1>
               </div>
             }
         </div>

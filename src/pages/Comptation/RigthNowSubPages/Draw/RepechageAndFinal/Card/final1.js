@@ -4,7 +4,7 @@ const Final1 = ({data}) => {
 
   return (
     <>
-      <div className='border-t border-b border-r p-1 justify-between flex-col xs:w-24 md:w-48 mt-1 font-Roboto xs:text-xs md:text-sm border-yellow-300'>
+      <div className='border-t border-b border-r p-1 justify-between flex-col xs:w-28 md:w-60 mt-1 font-Roboto xs:text-xs md:text-sm border-yellow-300'>
           <div>
             {
               data?.athlete1_id === 111 ?
@@ -12,7 +12,7 @@ const Final1 = ({data}) => {
               :
               <div className='flex items-center gap-2'>
                 <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1 className='xs:text-[10px] md:text-xs'>{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
+                <h1 className='xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap max-w-[14ch]'>{data?.athlete1.lastname.charAt(0)}.{data?.athlete1.username}</h1>
               </div>
             }
           </div>
@@ -23,7 +23,7 @@ const Final1 = ({data}) => {
               :
               <div className='flex items-center gap-2'>
                 <img className='xs:h-3 md:h-5' src='../../icons/mongolia.png'/>
-                <h1 className='xs:text-[10px] md:text-xs'>{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
+                <h1 className='xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap max-w-[14ch]'>{data?.athlete2.lastname.charAt(0)}.{data?.athlete2.username}</h1>
               </div>
             }
           </div>

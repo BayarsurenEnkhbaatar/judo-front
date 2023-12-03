@@ -60,7 +60,7 @@ const Onoolt16 = ({data, group}) => {
               <h1 className='border-b xs:w-20 md:w-40'></h1>
               :
               <div className='flex items-center gap-2'>
-                <h1 className="xs:text-[10px] md:text-xs">{round4[0]?.athlete1.lastname.charAt(0)}.{round4[0]?.athlete1?.username}</h1>
+                <h1 className="xs:text-[10px] md:text-xs text-overflow-ellipsis overflow-hidden whitespace-nowrap">{round4[0]?.athlete1.lastname.charAt(0)}.{round4[0]?.athlete1?.username}</h1>
               </div>
             }
         </div>
