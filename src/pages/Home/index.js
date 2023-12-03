@@ -21,7 +21,7 @@ const Home = () => {
             <HomeHeader/>
           </div>
         </div>
-        <div className='grid col-span-1 mt-20'>
+        <div className='grid col-span-1 justify-center mt-20'>
           <div>
             <img data-aos="fade-left" className='w-[70%]' src='../images/athlete.png'/>
           </div>

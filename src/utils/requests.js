@@ -8,7 +8,7 @@ export const GET = async (url) => {
         const response = await axios.get(url)
         return response
     }catch(error){
-        toast.error("Алдаа гарлаа")
+        // toast.error("Алдаа гарлаа")
         console.log(error)
         return error
     }

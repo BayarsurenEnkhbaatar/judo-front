@@ -51,8 +51,8 @@ const SubDraw = () => {
                       {
                         it.category.jin.map((jin, idx) => {
                           return(
-                            <div key={idx} className={parseInt(data.kg) === parseInt(jin.kg) ? 'border p-2 cursor-pointer hover:bg-blue-700 bg-blue-800 text-white w-12 text-center':
-                            'border w-12 text-center p-2 cursor-pointer hover:bg-blue-900'} onClick={()=> MobileChangeKg(jin.kg)}>
+                            <div key={idx} className={parseInt(data.kg) === parseInt(jin.kg) ? 'border p-2 cursor-pointer bg-gray-100 text-black w-12 text-center':
+                            'border w-12 text-center p-2 cursor-pointer'} onClick={()=> MobileChangeKg(jin.kg)}>
                               {jin.kg}
                             </div>
                           )
@@ -118,8 +118,8 @@ const SubDraw = () => {
                   {
                     data.groups.map((group, index) => {
                       return(
-                        <div className='md:mt-2' key={index}>
-                          <h1 className='text-center font-Roboto font-bold'> Хэсэг {group.group_name} {data.kg} кг</h1>
+                        <div className={index%2 === 0 ? 'border-b pb-4 bg-gray-50 pt-2' : 'border-b pb-4'}key={index}>
+                          <h1 className='text-center font-Roboto font-bold mt-4'> Хэсэг {group.group_name} {data.kg} кг</h1>
                           {
                             group.group_number === 32 &&
                             <Onoolt32 data={data.athletes} group={group.group_name}/>

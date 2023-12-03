@@ -20,6 +20,11 @@ const CompRegDetail = () => {
   const {currentUser, logout} = useContext(AuthContext);
 
   useEffect(() => {
+    if(!currentUser){
+      toast.error("Та нэвтэрнэ үү!")
+      logout();
+      return navigate('/login');
+    }
     Get();
   }, []);
 

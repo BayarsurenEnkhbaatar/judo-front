@@ -20,6 +20,7 @@ const RigthNowComp = () => {
 
   return (
     <div className='font-Roboto bg-gray-100'>
+    
       <div className='bg-mongolia bg-cover bg-center  mt-1'>
         <div className='xs:mx-4 md:container xs:text-xs'>
           <div className='py-8'>
@@ -38,9 +39,11 @@ const RigthNowComp = () => {
           </div>
         </div>
       </div>
+
       <div className='xs:mx-0 md:container rounded-lg'>
         <Outlet />
       </div>
+
     </div>
   );
 };

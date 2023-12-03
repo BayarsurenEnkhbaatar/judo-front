@@ -13,11 +13,12 @@ export const AuthContextProvider = ({ children }) =>{
     const navigate = useNavigate();
     const login = async(data)=>{
         const res = await POST({uri: org_uri+'/login', data: data});
-        if(res.status === 204) return toast.warning("Ийм имейл хаягтай хэрэглэгч байхгүй байна !")
-        if(res.status === 205) return toast.error("Хэрэглэгчийн имейл эсвэл нууц үг буруу байна !")
+        if(res.status === 204) return toast.warning("Ийм имейл хаягтай хэрэглэгч байхгүй байна !");
+        if(res.status === 205) return toast.error("Хэрэглэгчийн имейл эсвэл нууц үг буруу байна !");
         if(res.status === 200){
             setCurrentUser(res.data)
-            navigate(-1)
+            navigate(-2)
+            return toast.success("Амжилттай нэвтэрлээ");
         }
     }
 
