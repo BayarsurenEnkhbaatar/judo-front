@@ -12,6 +12,7 @@ const SubOverview = () => {
 
   const Get = async () => {
     const res = await GET(comp_uri+`/findId?id=${params.slug}`)
+    console.log(res.data)
     setComp(res.data)
   } 
 
@@ -22,7 +23,7 @@ const SubOverview = () => {
   return (
     <div className=''>
       <div className='bg-white p-4 mt-4 rounded-md'>
-        {/* <OverviewHeader data={comp}/> */}
+        <OverviewHeader data={comp}/>
         <div className='mt-4'>
           <div className='flex justify-between items-center'>
             <h1 className='text-lg uppercase'>Тэмцээний зорилго</h1>

@@ -56,7 +56,7 @@ const Onoolt32 = ({data, group}) => {
             }
         </div>
 
-        <div className={'flex justify-between flex-col md:my-[180px] xs:my-[180px]'}>
+        <div className={'flex justify-between flex-col md:my-[190px] xs:my-[180px]'}>
             {
                 round5.map((data, index) => {
                     return(

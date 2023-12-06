@@ -6,9 +6,13 @@ import { IMAGE_GET } from '../../utils/requests'
 
 const CompCard = ({data}) => {
   const [profile, setProfile] = useState();
+  const [load, setLoad] = useState(false);
+
   const Get = async () => {
+    setLoad(true);
     const res = await IMAGE_GET({key:data.cover_img});
     setProfile(res);
+    setLoad(false);
   }
   
   useEffect(() => {
@@ -19,12 +23,12 @@ const CompCard = ({data}) => {
     <div className='font-Roboto bg-white hover:shadow-xl'>
         <Link to={`/comptation/${data.id}`} className='bg-white rounded-lg shadow-md cursor-pointer hover:shadow-xl group'>
             {
-              profile?
-              <img className='rounded-t-lg h-36 w-full' src={profile}/>
-              :
+              load?
               <Skeleton>
                 <div className='rounded-t-lg h-36 w-full'></div>
               </Skeleton>
+              :
+              <img className='rounded-t-lg h-36 w-full' src={profile}/>
             }
             <div className='p-4 '>
                 <div className='flex items-center justify-between'>
