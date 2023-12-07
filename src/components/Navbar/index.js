@@ -25,6 +25,18 @@ const Navbar = ({children}) => {
             activate: pathname === '/comptation',
             href: '/comptation'
         },
+        {
+            icon: HiHome,
+            label:'Тамирчид',
+            activate: pathname === '/athletes',
+            href: '/athletes'
+        },
+        {
+            icon: HiHome,
+            label:'Клубууд',
+            activate: pathname === '/clubs',
+            href: '/clubs'
+        },
         // {
         //     icon: HiHome,
         //     label:'Эрэмбэ',
@@ -39,7 +51,6 @@ const Navbar = ({children}) => {
         // },
         
     ], [pathname]);
-
 
   return (
     <div className={pathname === '/register' || pathname === '/login' ? 'font-Roboto hidden':'font-Roboto'}>

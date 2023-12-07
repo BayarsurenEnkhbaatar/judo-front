@@ -35,6 +35,9 @@ const RigthNowComp = () => {
               <Link to={`/comptation-right/${params.slug}/draw`} className={pathname === `/comptation-right/${params.slug}/draw` ? 'font-bold' : 'font-light text-gray-200'}>
                 Оноолт
               </Link>
+              <Link to={`/comptation-right/${params.slug}/live`} className={pathname === `/comptation-right/${params.slug}/live` ? 'font-bold' : 'font-light text-gray-200'}>
+                Шууд үзэх
+              </Link>
             </div>
           </div>
         </div>
