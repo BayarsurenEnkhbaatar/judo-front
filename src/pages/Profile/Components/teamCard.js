@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import AthleteMoreModal from './athletemoremodal'
 import {STATUS} from '../../../utils/types'
 import { IMAGE_GET } from '../../../utils/requests'
+import AthleteDeleteModal from './athletedeletemodal'
 
 const TeamCard = ({data, callback}) => {
   const [profile, setProfile] = useState();
@@ -11,6 +12,7 @@ const TeamCard = ({data, callback}) => {
     const res = await IMAGE_GET({key:data.profile_img});
     setProfile(res);
   }
+
   
   useEffect(() => {
     Get();
@@ -28,7 +30,13 @@ const TeamCard = ({data, callback}) => {
               </h1>
             }
             {
-              data.status === STATUS.APPROVED &&
+              new Date(data.expiry_date) < new Date() && data.status === STATUS.APPROVED &&
+              <h1 className='absolute z-10 text-white bg-red-600 rounded-md text-[8px] xs:px-1 md:px-2 md:mt-2 md:ml-2 py-1'>
+                  Гишүүнчлэл дууссан
+              </h1>
+            }
+            {
+              new Date(data.expiry_date) > new Date() && data.status === STATUS.APPROVED &&
               <h1 className='absolute z-10 text-white bg-green-600 rounded-md text-[8px] xs:px-1 md:px-2 md:mt-2 md:ml-2 py-1'>
                   Баталгаажсан
               </h1>
@@ -42,7 +50,7 @@ const TeamCard = ({data, callback}) => {
             <div>
               {
                 profile?
-                <img src={profile} className='rounded-t-lg w-full xs:h-40 md:h-60'/>
+                <img src={profile} className='rounded-t-lg w-full xs:h-36 md:h-52'/>
                 :
                 <Skeleton>
                   <div className='w-full rounded-t-lg xs:h-40 md:h-60'></div>
@@ -63,6 +71,10 @@ const TeamCard = ({data, callback}) => {
               </div>
               <div className='mt-2'>
                 <AthleteMoreModal data={data}/>
+                {
+                  data.status === STATUS.REQUESTED || data.status === STATUS.DECLINED &&
+                  <AthleteDeleteModal data={data}/>
+                }
               </div>
             </div>
         </div>

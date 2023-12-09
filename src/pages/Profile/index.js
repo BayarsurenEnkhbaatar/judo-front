@@ -14,12 +14,17 @@ const Profile = () => {
   const Get = async () => {
     try{
       const res = await axios.get(org_uri+`/${currentUser}`)
-      setUser(res.data)
       if(res.data === null){
         toast.error("Таны нэвтрэх хугацаа дууссан байна дахин нэвтэрнэ үү!")
         logout();
         return navigate('/login');
       }
+      // if(new Date(res.data.expiry_date) < new Date() || res.data.expiry_date === null) {
+      //   toast.warning("Таны гишүүнчлэлийн хугацаа дууссан байна !")
+      //   logout();
+      //   return navigate('/login');
+      // }
+      setUser(res.data)
     }catch(err){
       console.log(err)
       if(err.response.status === 444){

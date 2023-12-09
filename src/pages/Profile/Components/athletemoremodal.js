@@ -15,7 +15,6 @@ export default function AthleteMoreModal({data}) {
     Get();
   }, [data]);
 
-console.log(data)
   return (
     <>
       <Button  onPress={onOpen} className='bg-gray-100 rounded-md w-full h-8 hover:bg-gray-200' size="sm">Дэлгэрэнгүй</Button>
@@ -31,10 +30,10 @@ console.log(data)
                     <img className="h-60 w-full" src={profile}/>
                   </div>
                   <div className="font-Roboto">
-                    <h1 className="text-sm">{data.lastname}</h1>
-                    <h1 className="text-lg">{data.username}</h1>
-                    <h1 className="text-sm">{data.phone_no}</h1>
-                    <h1 className="text-sm">{data.register_no}</h1>
+                    <h1 className="text-sm"><span>Овог : </span>{data.lastname}</h1>
+                    <h1 className="text-sm"><span>Нэр : </span>{data.username}</h1>
+                    <h1 className="text-sm"><span>Утасны дугаар : </span>{data.phone_no}</h1>
+                    <h1 className="text-sm"><span>Регистерийн дугаар : </span>{data.register_no}</h1>
                   </div>
                 </div>
               </ModalBody>

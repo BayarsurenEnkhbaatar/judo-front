@@ -1,6 +1,5 @@
-import { Button, Input, Textarea } from '@nextui-org/react'
+import { Input, Textarea } from '@nextui-org/react'
 import React from 'react'
-import { FiAlertCircle } from 'react-icons/fi'
 import { useOutletContext } from 'react-router-dom';
 import DateFormat from '../../../components/Date';
 
@@ -32,16 +31,41 @@ const DashboardProfile = () => {
             {/* <div className='mt-4'>
               <Button className='bg-blue-800 text-white font-semibold'>Хадгалах</Button>
             </div> */}
-            <div className='mt-4'>
-              <h1 className='text-xl font-semibold'>Анхааруулга</h1>
-              <div className='bg-green-200 w-full mt-2 rounded-md flex items-center p-6 gap-4'>
-                {/* <FiAlertCircle color='red' size={50}/> */}
-                <img className='h-20' src='../icons/checkmark.png'/>
-                <p className='text-sm text-green-700'>
-                  Сайн байна уу Dojo.mn сайтад тавтай морилно уу
-                </p>
+
+            {
+              new Date(user.expiry_date) < new Date() || user.expiry_date === null ?
+              <div className='mt-4'>
+                <h1 className='text-xl font-semibold'>Анхааруулга</h1>
+                <div className='bg-yellow-600 w-full mt-2 rounded-md flex items-center p-6 gap-4'>
+                  {/* <FiAlertCircle color='red' size={50}/> */}
+                  <img className='h-16' src='../icons/alert.png'/>
+                  <div>
+                    <p className='text-sm text-gray-200'>
+                      Сайн байна уу Dojo.mn сайтад тавтай морилно уу.
+                    </p>
+                    <p className='text-sm text-gray-200'>
+                      Та гишүүнчлэлээ баталгаажуулна уу
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
+              :
+              <div className='mt-4'>
+                <h1 className='text-xl font-semibold'>Анхааруулга</h1>
+                <div className='bg-green-200 w-full mt-2 rounded-md flex items-center p-6 gap-4'>
+                  {/* <FiAlertCircle color='red' size={50}/> */}
+                  <img className='h-16' src='../icons/checkmark.png'/>
+                  <div>
+                    <p className='text-sm text-gray-700'>
+                      Сайн байна уу Dojo.mn сайтад тавтай морилно уу.
+                    </p>
+                    <p className='text-sm text-gray-700'>
+                      Таны гишүүнчлэлийн хугацаа <span className='font-bold'><DateFormat dateString={user.expiry_date}/></span> өдөр дуусна.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            }
 
           </div>
         </div>

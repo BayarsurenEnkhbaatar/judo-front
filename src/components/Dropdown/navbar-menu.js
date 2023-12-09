@@ -12,14 +12,20 @@ export default function NavbarProfileMenu() {
         </div>
       </DropdownTrigger>
       <DropdownMenu className="">
-        <DropdownItem key="new" className="py-2">
-            <Link to='/profile' className="py-2">Байгууллагын мэдээлэл</Link>
+        <DropdownItem key="new" className="">
+            <Link to='/profile' className="py-4">Байгууллагын мэдээлэл</Link>
         </DropdownItem>
-        <DropdownItem className="py-2">
-            <Link to='/profile/teams' className="py-2">Тамирчдын мэдээлэл</Link>
+        <DropdownItem className="">
+            <Link to='/profile/teams' className="py-4">Тамирчдын мэдээлэл</Link>
         </DropdownItem>
-        <DropdownItem className="py-2">
-            <Link to='/profile/teams-add' className="py-2">Тамирчин бүртгэх</Link>
+        <DropdownItem className="">
+            <Link to='/profile/teams-add' className="py-4">Тамирчин бүртгэх</Link>
+        </DropdownItem>
+        <DropdownItem className="block md:hidden">
+            <Link to='/clubs' className="py-4">Клубууд</Link>
+        </DropdownItem>
+        <DropdownItem className="block md:hidden">
+            <Link to='/athletes' className="py-4">Тамирчид</Link>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

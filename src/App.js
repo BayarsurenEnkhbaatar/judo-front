@@ -15,6 +15,9 @@ import CompRegDetail from './pages/Comptation/CompReg/detail';
 import Rank from './pages/Rank';
 import TeamsRegister from './pages/Profile/Pages/teams-register';
 import TeamsAdd from './pages/Profile/Pages/teams-add';
+import Clubs from './pages/Clubs';
+import Athletes from './pages/Athletes';
+import CompLive from './pages/Comptation/RigthNowSubPages/Live';
 
 function App() {
   return (
@@ -26,6 +29,8 @@ function App() {
         <Route path='/comptation' element={<Comptation/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/rank' element={<Rank/>}/>
+        <Route path='/clubs' element={<Clubs/>}/>
+        <Route path='/athletes' element={<Athletes/>}/>
         <Route path='/comptation/:slug' element={<CompRegDetail/>}/>
         <Route path='/login' element={<Login/>}/>
 
@@ -37,6 +42,7 @@ function App() {
         <Route path="/comptation-right/:slug" element={<RigthNowComp />}>
           <Route index element={<SubOverview/>}/>
           <Route path="draw" element={<SubDraw/>}/>
+          <Route path="live" element={<CompLive/>}/>
         </Route>
 
         <Route path="/profile" element={<Profile />}>

@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 import { STATUS } from "../../utils/types";
 
 export default function ComptationRegisterModal({data, callback, org}) {
-  console.log(org);
   const params = useParams();
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const {currentUser} = useContext(AuthContext);
@@ -46,6 +45,10 @@ export default function ComptationRegisterModal({data, callback, org}) {
     console.log(checkedValue);
   }
 
+  function handleCallback(){
+    callback();
+  }
+
   const Submit = async () => {
     if(org === STATUS.APPROVED){
       return toast.warning("Таны мэдүүлэг баталгаажсан тул мэдүүлэг өөрчлөх боломжгүй");
@@ -65,13 +68,10 @@ export default function ComptationRegisterModal({data, callback, org}) {
     }
   }
 
-  function handleCallback(){
-    callback();
-  }
-
   return (
     <>
-      <Button onPress={open} className='xs:mt-2 md:mt-0' size='sm'>Тамирчин бүртгүүлэх</Button>
+      {/* <Button onPress={open} className='xs:mt-2 md:mt-0 z-0' size='sm'>Тамирчин бүртгүүлэх</Button> */}
+      <button onClick={open} className='xs:mt-2 md:mt-0 bg-gray-200 hover:bg-gray-300 text-xs rounded-md p-2'>Тамирчин бүртгүүлэх</button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top'>
         <ModalContent>
           {(onClose) => (

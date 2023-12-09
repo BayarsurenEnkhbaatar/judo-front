@@ -17,7 +17,7 @@ export const AuthContextProvider = ({ children }) =>{
         if(res.status === 205) return toast.error("Хэрэглэгчийн имейл эсвэл нууц үг буруу байна !");
         if(res.status === 200){
             setCurrentUser(res.data)
-            navigate(-2)
+            navigate('/profile')
             return toast.success("Амжилттай нэвтэрлээ");
         }
     }

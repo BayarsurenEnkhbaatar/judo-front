@@ -19,6 +19,7 @@ const Comptationregister = ({ data, org }) => {
   const Get = async () => {
     const res = await GET(comp_uri + `-to-athlete-category?comp_id=${params.slug}&kg=${data.data.kg}&category_id=${data.data.category_id}&org_id=${currentUser}`);
     setAthlete(res.data);
+    console.log(res.data)
   }
 
   function callback(){
