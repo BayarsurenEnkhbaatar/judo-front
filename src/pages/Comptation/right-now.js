@@ -22,7 +22,7 @@ const RigthNowComp = () => {
     <div className='font-Roboto bg-gray-100'>
     
       <div className='bg-mongolia bg-cover bg-center  mt-1'>
-        <div className='xs:mx-4 md:container xs:text-xs'>
+        <div className='xs:mx-2 md:mx-20 2xl:md:container xs:text-xs'>
           <div className='py-8'>
             <h1 className='text-3xl font-bold uppercase text-white'>{data.name}</h1>
             <p className='text-white text-xl font-light uppercase'>{data.province}, {data.sum}</p>
@@ -43,7 +43,7 @@ const RigthNowComp = () => {
         </div>
       </div>
 
-      <div className='xs:mx-0 md:container rounded-lg'>
+      <div className='xs:mx-2 md:mx-20 2xl:md:container rounded-lg'>
         <Outlet />
       </div>
 
