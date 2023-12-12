@@ -32,7 +32,7 @@ const Statistic = ({data}) => {
           <div className='grid col-span-2 border p-2'>
             <div className=''>
               <h1 className='border-b p-4 text-sm font-bold'>Статистик</h1>
-              <h1 className='border-b p-2 font-bold text-xs flex justify-between'><span className='w-10'>Эрэгтэй</span>
+              <h1 className='border-b p-2 font-bold xs:text-[8px] md:text-xs flex justify-between'><span className='w-10'>Эрэгтэй</span>
                 {
                   jin.male.map((data, index) => {
                     return(
@@ -41,7 +41,7 @@ const Statistic = ({data}) => {
                   })
                 }
               </h1>
-              <h1 className='border-b p-2 font-light text-xs flex justify-between'><span className='w-10'>Оролцогчид</span>
+              <h1 className='border-b p-2 font-light xs:text-[8px] md:text-xs flex justify-between'><span className='w-10'>Оролцогчид</span>
                 {
                   jin.male.map((data, index) => {
                     return(
@@ -50,7 +50,7 @@ const Statistic = ({data}) => {
                   })
                 }
               </h1>
-              <h1 className='border-b p-2 font-bold text-xs flex justify-between'><span className='w-10'>Эмэгтэй</span>
+              <h1 className='border-b p-2 font-bold xs:text-[8px] md:text-xs flex justify-between'><span className='w-10'>Эмэгтэй</span>
                 {
                   jin.female.map((data, index) => {
                     return(
@@ -59,7 +59,7 @@ const Statistic = ({data}) => {
                   })
                 }
               </h1>
-              <h1 className='border-b p-2 font-light text-xs flex justify-between'><span className='w-10'>Оролцогчид</span>
+              <h1 className='border-b p-2 font-light xs:text-[8px] md:text-xs flex justify-between'><span className='w-10'>Оролцогчид</span>
                 {
                   jin.female.map((data, index) => {
                     return(

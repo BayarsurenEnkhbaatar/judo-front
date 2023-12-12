@@ -12,12 +12,12 @@ const SubOverview = () => {
   const params= useParams();
 
   const Get = async () => {
-    const res = await GET(comp_uri+`/findId?id=${params.slug}`)
-    setComp(res.data)
+    const res = await GET(comp_uri+`/findId?id=${params.slug}`);
+    setComp(res.data);
   } 
 
   useEffect(() => {
-    Get()
+    Get();
   }, []);
 
   return (
