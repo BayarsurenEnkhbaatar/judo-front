@@ -20,13 +20,13 @@ const ClubCard = ({data}) => {
         <div className='flex flex-col justify-center'>
             {
                 profile?
-                <img className='xs:h-20 md:h-40' src={profile}/>
+                <img className='xs:h-20 md:h-40 rounded-md' src={profile}/>
                 :
                 <Skeleton className='xs:-20 md:h-40'>
                 </Skeleton>
             }
             <div className=''>
-                <h1 className='text-center my-3 font-semibold font-Roboto text-blue-700 cursor-pointer'>{data.name}</h1>
+                <h1 className='text-center my-3 font-light font-Roboto text-gray-700 cursor-pointer'>{data.name}</h1>
             </div>
         </div>
     </div>
