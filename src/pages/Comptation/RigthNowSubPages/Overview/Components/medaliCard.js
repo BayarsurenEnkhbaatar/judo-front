@@ -8,7 +8,7 @@ const MedaliCard = ({data, index}) => {
             <div className='mt-2 flex gap-4 items-center'>
                 <h1 className='text-sm'>{index}.</h1>
                 {/* <img className='w-8 rounded-md' src='../../images/dojo.jpg'/> */}
-                <h1 className='font-bold uppercase text-xs'>{data.name}</h1>
+                <h1 className='font-bold uppercase xs:text-[8px] md:text-xs'>{data.name}</h1>
             </div>
         </div>
         <div className='w-1/4'>
