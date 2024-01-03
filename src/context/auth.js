@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import axios from "axios"
-import {logoutUri, org_uri } from "../utils/url";
+import { org_uri } from "../utils/url";
 import { POST } from "../utils/requests";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";

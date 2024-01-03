@@ -9,7 +9,7 @@ const Footer = () => {
       <div className='bg-[#0337A6]'>
         <div className='md:container'>
           <div className='text-white py-10 text-center font-Roboto'>
-            <h1>Dojo.mn ХХК</h1>
+            <h1>Dojo.mn</h1>
           </div>
         </div>
       </div>

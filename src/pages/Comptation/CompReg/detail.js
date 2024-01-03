@@ -3,7 +3,6 @@ import {Button} from '@nextui-org/react'
 import Comptationregister from '../../../components/Card/comptation-register'
 import { useNavigate, useParams } from 'react-router-dom';
 import { comptoorg_uri, comp_to_uri } from '../../../utils/url';
-import {GET} from '../../../utils/requests'
 import {GENDER, STATUS} from '../../../utils/types'
 import ComptoOrgRegister from '../../../components/Modals/org-comp-register';
 import { AuthContext } from '../../../context/auth';
@@ -18,6 +17,7 @@ const CompRegDetail = () => {
   const [comporg, setComporg] = useState({ath:[], org:''});
   const params = useParams();
   const {currentUser, logout} = useContext(AuthContext);
+  const [load, setLoad] = useState(false);
 
   useEffect(() => {
     if(!currentUser){
@@ -29,13 +29,16 @@ const CompRegDetail = () => {
   }, []);
 
   const Get = async () => {
+    setLoad(true);
     try{
       const res = await axios.get(comp_to_uri + `/${params.slug}`);
       const rest = await axios.get(comptoorg_uri+ `/token?comp_id=${params.slug}&org_id=${currentUser}`);
       setComporg({...comporg, ath:rest.data.athletes, org:rest.data.comp })
       setCategorys(res.data.category.data);
       setComp(res.data.category.comp);
+      setLoad(false);
     }catch(err){
+      setLoad(false);
       if(err.response.status === 444){
         toast.error("Та нэвтэрнэ үү!")
         logout();
@@ -54,25 +57,31 @@ const CompRegDetail = () => {
           </div>
         </div>
       </div>
-      <div className='md:container xs:mx-4 py-4'>
-     {
-       comporg?.org?.status === STATUS.REQUESTED &&
-        <div className=''>
-          <div className=''>
-            <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
-              <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
-              <MeduulegBatalgaajuulah ath={comporg}/>
-            </div>
-          </div>
+      {
+        load?
+        <div>
+          <h1 className='text-center py-20'>Уншиж байна ...</h1>
         </div>
-     }
-     {
-       comporg?.org?.status === STATUS.APPROVED &&
-       <div className='bg-green-600 p-2 text-white text-xs flex flex-wrap items-center justify-between rounded'>
-        <h1 className='text-center'>Таны мандатын төлбөр төлөгдсөн</h1>
-        <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажсан</h1>
-      </div>
-     }
+        :
+        <div className='md:container xs:mx-4 py-4'>
+        {
+          comporg?.org?.status === STATUS.REQUESTED &&
+            <div className=''>
+              <div className=''>
+                <div className='bg-yellow-600 p-2 text-white text-xs flex flex-wrap items-center justify-between'>
+                  <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажаагүй</h1>
+                  <MeduulegBatalgaajuulah ath={comporg}/>
+                </div>
+              </div>
+            </div>
+        }
+        {
+          comporg?.org?.status === STATUS.APPROVED &&
+          <div className='bg-green-600 p-2 text-white text-xs flex flex-wrap items-center justify-between rounded'>
+            <h1 className='text-center'>Таны мандатын төлбөр төлөгдсөн</h1>
+            <h1 className='font-bold uppercase'>Мэдүүлэг баталгаажсан</h1>
+          </div>
+        }
         {
           categorys.map((item, index) => {
             return(
@@ -99,6 +108,7 @@ const CompRegDetail = () => {
         }
         
       </div> 
+      }
     </div>
   )
 }

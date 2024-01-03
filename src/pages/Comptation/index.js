@@ -1,7 +1,6 @@
 
 import React, { useContext, useEffect, useState } from 'react'
 import CompCard from '../../components/Card/comptation'
-import { AuthContext } from '../../context/auth'
 import {GET} from '../../utils/requests'
 import {comp_uri} from '../../utils/url'
 
@@ -33,7 +32,7 @@ const Comptation = () => {
                 <h1 className='text-center'>Уншиж байна ...</h1>
               </div>
               :
-              <div className='grid xs:grid-cols-1 md:grid-cols-4 gap-4 pb-20'>
+              <div className='grid xs:grid-cols-2 md:grid-cols-4 gap-4 pb-20'>
                     {
                       data.map((item, index) => {
                         return(

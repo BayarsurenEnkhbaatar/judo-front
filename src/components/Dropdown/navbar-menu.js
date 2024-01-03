@@ -6,9 +6,12 @@ export default function NavbarProfileMenu() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <div className=" flex items-center flex-col cursor-pointer">
+        <div className=" flex items-center flex-row cursor-pointer">
             <img className="h-7" src="../../icons/judo.png"/>
-            <h1 className="text-xs">Миний хуудас</h1>
+            <div>
+              <h1 className="text-xs ml-2 uppercase">Миний хуудас</h1>
+              <h1 className="text-[10px] ml-2">Клубын мэдээлэл</h1>
+            </div>
         </div>
       </DropdownTrigger>
       <DropdownMenu className="">

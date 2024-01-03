@@ -72,7 +72,9 @@ export default function ComptationRegisterModal({data, callback, org}) {
     <>
       {/* <Button onPress={open} className='xs:mt-2 md:mt-0 z-0' size='sm'>Тамирчин бүртгүүлэх</Button> */}
       <button onClick={open} className='xs:mt-2 md:mt-0 bg-gray-200 hover:bg-gray-300 text-xs rounded-md p-2'>Тамирчин бүртгүүлэх</button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top'>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='top' backdrop="opaque" scrollBehavior='inside' classNames={{
+          backdrop: "bg-gradient-to-t from-zinc-900 to-zinc-900/10 backdrop-opacity-20"
+        }}>
         <ModalContent>
           {(onClose) => (
             <>
