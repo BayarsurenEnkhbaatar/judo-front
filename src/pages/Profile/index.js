@@ -49,7 +49,7 @@ const Profile = () => {
                 <Sidebar data={user}/>
               </div>
               
-              <div className='grid col-span-3 w-full overflow-x-auto'>
+              <div className='grid col-span-3 overflow-x-auto'>
                 <div className='md:block'>
                   <Outlet context={user}/>
                 </div>

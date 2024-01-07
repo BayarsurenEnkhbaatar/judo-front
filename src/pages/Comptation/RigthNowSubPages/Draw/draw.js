@@ -5,7 +5,7 @@ import {GET} from '../../../../utils/requests';
 import { comp_to_uri, final_uri, group_uri, matches_uri, repechage_uri } from '../../../../utils/url';
 import Onoolt16 from './Onooltuud/16';
 import Onoolt4 from './Onooltuud/4';
-import {GENDER} from '../../../../utils/types'
+import {ATTYPES, GENDER, TYPES} from '../../../../utils/types'
 import Repechage from './RepechageAndFinal/repechage';
 import Final from './RepechageAndFinal/final';
 import Onoolt32 from './Onooltuud/32';
@@ -28,8 +28,8 @@ const SubDraw = () => {
   }
 
   const MobileChangeKg = (value) => {
-    console.log(value);
     setData({...data, kg:value, modal:false});
+    console.log(data)
   }
 
   return (
@@ -46,8 +46,14 @@ const SubDraw = () => {
                 data.category.map((it, index) => {
                   return(
                     <div key={index}>
-                      {it.category.gender === GENDER.MALE && <h1 className='border-b p-2 font-bold text-center'>Эр</h1>}
-                      {it.category.gender === GENDER.FEMALE && <h1 className='border-b p-2 font-bold text-center'>Эм</h1>}
+                      {it.category.gender === GENDER.MALE && <h1 className='border-b p-2 font-bold text-center flex flex-col'>
+                        <label>Эр</label>
+                        <label>{it.category.name.slice(0, 4)}</label>
+                      </h1>}
+                      {it.category.gender === GENDER.FEMALE && <h1 className='border-b p-2 font-bold text-center flex flex-col'>
+                        <label>Эм</label>
+                        <label>{it.category.name.slice(0, 4)}</label>
+                      </h1>}
                       {
                         it.category.jin.map((jin, idx) => {
                           return(
@@ -72,25 +78,56 @@ const SubDraw = () => {
 
       <div className='xs:hidden md:block'>
 
+      {
+        
+      }
+
         <div className='bg-white rounded shadow-lg'>
           <div className='flex'>
             {
               data.category.map((it, index) => {
                 return(
-                  <div key={index}>
-                    {it.category.gender === GENDER.MALE && <h1 className='border-b p-2 font-bold text-center'>Эр</h1>}
-                    {it.category.gender === GENDER.FEMALE && <h1 className='border-b p-2 font-bold text-center'>Эм</h1>}
+                  <>
                     {
-                      it.category.jin.map((jin, idx) => {
-                        return(
-                          <div key={idx} className={parseInt(data.kg) === parseInt(jin.kg) ? 'border-r p-2 border-b cursor-pointer hover:bg-blue-500 bg-blue-600 text-white w-12 text-center':
-                           'border-r w-12 text-center p-2 border-b cursor-pointer hover:bg-gray-200'} onClick={()=> setData({...data, kg:jin.kg})}>
-                            {jin.kg}
-                          </div>
-                        )
-                      })
+                      it.category.type === ATTYPES.JUNIOR ?
+
+                      <div key={index}>
+                        {it.category.gender === GENDER.MALE && <h1 className='border-b p-2 font-bold text-center flex flex-col'>
+                          <label>Эр</label>
+                          <label>{it.category.name.slice(0, 4)}</label>
+                        </h1>}
+                        {it.category.gender === GENDER.FEMALE && <h1 className='border-b p-2 font-bold text-center flex flex-col'>
+                          <label>Эм</label>
+                          <label>{it.category.name.slice(0, 4)}</label>
+                        </h1>}
+                        {
+                          it.category.jin.map((jin, idx) => {
+                            return(
+                              <div key={idx} className={parseInt(data.kg) === parseInt(jin.kg) ? 'border-r p-2 border-b cursor-pointer hover:bg-blue-500 bg-blue-600 text-white w-12 text-center':
+                              'border-r w-12 text-center p-2 border-b cursor-pointer hover:bg-gray-200'} onClick={()=> setData({...data, kg:jin.kg})}>
+                                {jin.kg}
+                              </div>
+                            )
+                          })
+                        }
+                      </div>
+                      :
+                      <div key={index}>
+                        {it.category.gender === GENDER.MALE && <h1 className='border-b p-2 font-bold text-center'>Эр</h1>}
+                        {it.category.gender === GENDER.FEMALE && <h1 className='border-b p-2 font-bold text-center'>Эм</h1>}
+                        {
+                          it.category.jin.map((jin, idx) => {
+                            return(
+                              <div key={idx} className={parseInt(data.kg) === parseInt(jin.kg) ? 'border-r p-2 border-b cursor-pointer hover:bg-blue-500 bg-blue-600 text-white w-12 text-center':
+                              'border-r w-12 text-center p-2 border-b cursor-pointer hover:bg-gray-200'} onClick={()=> setData({...data, kg:jin.kg})}>
+                                {jin.kg}
+                              </div>
+                            )
+                          })
+                        }
+                      </div>
                     }
-                  </div>
+                  </>
                 )
               })
             }

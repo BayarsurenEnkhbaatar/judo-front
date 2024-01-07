@@ -13,7 +13,6 @@ const NowComptation = () => {
   const Get = async () => {
     const res = await GET(comp_uri + `/all`);
     setData(res.data);
-    console.log(res)
   }
 
   return (

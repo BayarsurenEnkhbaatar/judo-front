@@ -41,10 +41,11 @@ const DashboardProfile = () => {
                   <img className='h-16' src='../icons/alert.png'/>
                   <div>
                     <p className='text-sm text-gray-200'>
-                      Сайн байна уу Dojo.mn сайтад тавтай морилно уу.
-                    </p>
-                    <p className='text-sm text-gray-200'>
                       Та гишүүнчлэлээ баталгаажуулна уу
+                    </p>
+                    <p className='text-sm text-gray-200 mt-2'>
+                      Жилийн хураамж <span className='font-bold text-gray-100'>200,000</span> төгрөгийг Монголын жүдо бөхийн холбооны <span className='font-bold text-gray-100 mr-1'>5664021746</span>
+                       дансанд хийнэ үү гүйлгээний утга <span className='font-bold text-gray-100'>Байгууллагын нэр</span> байна.
                     </p>
                   </div>
                 </div>

@@ -13,7 +13,6 @@ import SubDraw from './pages/Comptation/RigthNowSubPages/Draw/draw';
 import Login from './pages/Login';
 import CompRegDetail from './pages/Comptation/CompReg/detail';
 import Rank from './pages/Rank';
-import TeamsRegister from './pages/Profile/Pages/teams-register';
 import TeamsAdd from './pages/Profile/Pages/teams-add';
 import Clubs from './pages/Clubs';
 import Athletes from './pages/Athletes';

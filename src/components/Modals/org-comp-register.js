@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from "react";
-import {Button} from "@nextui-org/react";
+import {Button, Spinner} from "@nextui-org/react";
 import { GET, POST } from "../../utils/requests";
 import { comptoorg_uri, org_uri } from "../../utils/url";
 import { useNavigate, useParams } from "react-router-dom";
@@ -36,11 +36,14 @@ export default function ComptoOrgRegister() {
     }
     
     const Submit = async() => {
+      setLoader(true);
         const res = await POST({uri:comptoorg_uri + `/register-modal`, data:{comp_id: params.slug, token: currentUser}})
         if(res.status === 200){
             toast.success("Амжилттай тамирчдаа бүртгүүлнэ үү !")
             setIsModalOpen(false);
+            setLoader(false);
         }else{
+            setLoader(false);
             toast.success("Системд алдаа гарлаа !")
         }
     }
@@ -68,8 +71,13 @@ export default function ComptoOrgRegister() {
                   <h1>Тэмцээнд бүртгүүлэх</h1>
                 </div>
                 <div className="mt-4 flex justify-end ml-2 z-20 gap-2">
-                  <Button onPress={()=> navigate(-1)} className="bg-white">Үгүй</Button>
-                  <Button className="bg-gray-200" onPress={Submit}>Тийм</Button>
+                  <Button onPress={()=> navigate(-2)} className="bg-white">Үгүй</Button>
+                  {
+                    loader?
+                    <Button className="bg-gray-200"><Spinner/></Button>
+                    :
+                    <Button className="bg-gray-200" onPress={Submit}>Тийм</Button>
+                  }
                 </div>
               </>
             }

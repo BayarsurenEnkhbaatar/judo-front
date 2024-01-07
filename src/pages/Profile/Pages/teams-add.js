@@ -82,7 +82,7 @@ const TeamsAdd = () => {
                   <img className='h-12' src='../icons/alert1.png'/>
                   <div>
                     <p className='text-sm uppercase text-gray-100'>
-                      Та гишүүнчлэлээ баталгаажуулна уу !
+                      Та гишүүнчлэлээ баталгаажуулснаар тамирчидаа бүртгүүлэх боломжтой болно.
                     </p>
                   </div>
                 </div>

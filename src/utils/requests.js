@@ -59,7 +59,7 @@ export const IMAGE_UPLOAD = async ({file}) => {
         return response.data
     }catch(error){
         console.log(error);
-        toast.error("Зураг хадгалахад алдаа гарлаа дахин оролдоно уу !");
+        toast.error("Дахин оролдоно уу !");
         return ""
     }
 
