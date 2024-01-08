@@ -50,7 +50,7 @@ const CompRegDetail = () => {
     <div className='font-Roboto bg-gray-200'>
       <ComptoOrgRegister/>
       <div className=' bg-blue-900 mt-1'>
-        <div className='md:container xs:mx-4'>
+        <div className='xs:mx-4 md:mx-[220px]'>
           <div className='py-8'>
             <h1 className='text-3xl font-bold uppercase text-white'>{comp.name}</h1>
             <p className='text-white text-xl font-light uppercase mt-1'>Тэмцээний бүртгэл</p>
@@ -63,7 +63,7 @@ const CompRegDetail = () => {
           <h1 className='text-center py-20'>Уншиж байна ...</h1>
         </div>
         :
-        <div className='md:container xs:mx-4 py-4'>
+        <div className='md:mx-[220px] xs:mx-4 py-4'>
         {
           comporg?.org?.status === STATUS.REQUESTED &&
             <div className=''>

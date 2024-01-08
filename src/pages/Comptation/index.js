@@ -52,7 +52,7 @@ const Comptation = () => {
 
   return(
     <div className='font-Roboto bg-gray-100 h-full'>
-        <div className='xs:mx-4 md:container'>
+        <div className='xs:mx-4 md:mx-[220px]'>
           <div className='pt-20 pb-3'>
               <h1 className='xs:text-xl md:text-2xl font-semibold'>Одоо болох тэмцээнүүд</h1>
           </div>
@@ -138,14 +138,3 @@ const Comptation = () => {
 }
 
 export default Comptation
-
-
- {/* <div className='grid xs:grid-cols-2 md:grid-cols-4 gap-4 pb-20'>
-                  {
-                    data.map((item, index) => {
-                      return(
-                        <CompCard data={item} key={index}/>
-                      )
-                    })
-                  }
-              </div> */}
